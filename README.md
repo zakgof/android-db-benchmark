@@ -9,19 +9,19 @@ Benchmarking some android data storage frameworks:
 - velvetdb
 
 
-# Test operations:
+### Test operations:
 
 - insert 1000 person records with random data
 - get 1000 random persons using lastName as the key
 
 
-# Interactive mode:
+### Interactive mode:
 
 - install app on your phone
 - click a button to run a specific test
 - observe the report (time calculated using `System.currentMillis()`)
 
-# Benchmark mode:
+### Benchmark mode:
 
 - Run as android Jetpack instrumented benchmark
 
