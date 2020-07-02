@@ -1,6 +1,7 @@
 package com.zakgof.dbperf.lib;
 
 import android.content.Context;
+import android.util.Log;
 
 import com.orhanobut.hawk.Hawk;
 
@@ -29,6 +30,11 @@ public class NitriteTest implements PerfTest {
                 .filePath(path)
                 .openOrCreate();
         repository = nitrite.getRepository(Person.class);
+
+        Person person = new Person(1L);
+        repository.insert(person);
+        Person restoredperson = repository.find(ObjectFilters.eq("lastName", person.getLastName())).firstOrDefault();
+        Log.e("TESTTEST", "" + restoredperson);
     }
 
     @Override
@@ -47,7 +53,7 @@ public class NitriteTest implements PerfTest {
     public void getByKey() {
         for (String key : Data.KEYS) {
             Person restoredperson = repository.find(ObjectFilters.eq("lastName", key)).firstOrDefault();
-            restoredperson.toString();
+            Log.e("RESTORED", "" + restoredperson);
         }
     }
 

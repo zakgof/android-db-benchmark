@@ -17,7 +17,7 @@ android {
 
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
@@ -37,8 +37,9 @@ dependencies {
         "androidx.room:room-runtime:2.2.5",
         "org.dizitart:nitrite:3.4.2"
     )
-    compileOnly 'org.projectlombok:lombok:1.18.12'
     annotationProcessor 'org.projectlombok:lombok:1.18.12'
+    //noinspection AnnotationProcessorOnCompilePath
+    compileOnly 'org.projectlombok:lombok:1.18.12'
     annotationProcessor "androidx.room:room-compiler:2.2.5"
     coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:1.0.9'
 

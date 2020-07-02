@@ -9,10 +9,9 @@
     <Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/roomtest" android:onClick="runRoomTest" />
 
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/report" />
+    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:id="@+id/log" />
+    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:id="@+id/report" />
+
 
 
 </LinearLayout>

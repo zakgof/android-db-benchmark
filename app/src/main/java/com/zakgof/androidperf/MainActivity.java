@@ -6,6 +6,7 @@ import androidx.core.content.ContextCompat;
 import android.Manifest;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -25,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
 
     private ExecutorService executorService;
     private TextView report;
+    private TextView log;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         executorService = Executors.newFixedThreadPool(1);
         report = findViewById(R.id.report);
+        log = findViewById(R.id.log);
     }
 
     @Override
@@ -84,10 +87,10 @@ public class MainActivity extends AppCompatActivity {
             String rep = String.format(Locale.ENGLISH, "%s / insert \t: %d ms \n%s / get    \t: %d ms",
                     test.name(), (t2-t1),
                     test.name(), (t3-t2));
-            runOnUiThread(() -> report(rep));
+            runOnUiThread(() -> log(rep));
         } catch (Exception e) {
-            runOnUiThread(() -> report("Error : " + e));
-            e.printStackTrace();
+            runOnUiThread(() -> log("Error : " + e));
+            Log.e("dbperf", "Error in test", e);
         } finally {
             test.close();
         }
@@ -95,6 +98,10 @@ public class MainActivity extends AppCompatActivity {
 
     private void report(String result) {
         report.setText(result);
+    }
+    private void log(String result) {
+        log.setText(log.getText() + "\n" + result);
+        report("");
     }
 
 }
