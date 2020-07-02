@@ -20,6 +20,8 @@
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
 
+-dontobfuscate
+
 -keep class jetbrains.exodus.io.FileDataReaderWriterProvider { *; }
 -keep class org.diztart.no2.** { *; }
 -keep class org.slf4j.** { *; }
@@ -69,3 +71,4 @@
 
 -keepattributes *Annotation*
 -keepclasseswithmembers @org.junit.runner.RunWith public class *
+-keep class com.google.common.collect.ForwardingSortedSet {*;}

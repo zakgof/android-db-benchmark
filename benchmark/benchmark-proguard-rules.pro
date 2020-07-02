@@ -35,3 +35,4 @@
 -dontwarn com.squareup.javawriter.JavaWriter
 
 -keepclasseswithmembers @org.junit.runner.RunWith public class *
+-keep class com.google.common.collect.ForwardingSortedSet {*;}
