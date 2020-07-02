@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical">
+
+    <Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/velvetdbtest" android:onClick="runVelvetdbTest" />
+    <Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/velvetdbbatchtest" android:onClick="runVelvetdbBatchTest" />
+    <Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/paperdbtest" android:onClick="runPaperdbTest" />
+    <Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/hawktest" android:onClick="runHawkTest" />
+    <Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/nitritetest" android:onClick="runNitriteTest" />
+    <Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/roomtest" android:onClick="runRoomTest" />
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/report" />
+
+
+</LinearLayout>

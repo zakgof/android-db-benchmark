@@ -1,0 +1,52 @@
+apply plugin: 'com.android.library'
+apply plugin: 'androidx.benchmark'
+
+android {
+    signingConfigs {
+        release {
+            storeFile file('E:/Business/new.keystore')
+            storePassword 'Leslie22557799'
+            keyAlias 'zak'
+            keyPassword 'Leslie22557799'
+        }
+    }
+    compileSdkVersion 29
+    buildToolsVersion "29.0.3"
+
+    compileOptions {
+        sourceCompatibility = 1.8
+        targetCompatibility = 1.8
+    }
+
+    defaultConfig {
+        minSdkVersion 21
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.benchmark.junit4.AndroidBenchmarkRunner"
+        testInstrumentationRunnerArgument 'androidx.benchmark.suppressErrors', 'EMULATOR,LOW_BATTERY,ACTIVITY-MISSING,UNLOCKED'
+    }
+
+    testBuildType = "release"
+    buildTypes {
+        debug {
+            // Since debuggable can"t be modified by gradle for library modules,
+            // it must be done in a manifest - see src/androidTest/AndroidManifest.xml
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile("proguard-android-optimize.txt"), "benchmark-proguard-rules.pro"
+        }
+        release {
+            isDefault = true
+            signingConfig signingConfigs.release
+        }
+    }
+}
+
+dependencies {
+    implementation project(":lib")
+    androidTestImplementation 'androidx.test:runner:1.2.0'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'junit:junit:4.13'
+    androidTestImplementation 'androidx.benchmark:benchmark-junit4:1.1.0-alpha01'
+}

@@ -1,0 +1,4 @@
+include ':lib'
+include ':benchmark'
+include ':app'
+rootProject.name = "android-db-perf"

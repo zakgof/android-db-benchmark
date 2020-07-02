@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">android-db-perf</string>
+    <string name="velvetdbtest">velvetdb test</string>
+    <string name="paperdbtest">paper test</string>
+    <string name="hawktest">hawk test</string>
+    <string name="nitritetest">nitrite test</string>
+    <string name="velvetdbbatchtest">velvetdb-batch test</string>
+    <string name="roomtest">room test</string>
+</resources>
