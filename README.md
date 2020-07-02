@@ -2,17 +2,17 @@
 
 Benchmarking some android data storage frameworks:
 
-- paper
-- hawk
-- nitrite
-- room
-- velvetdb
+- [paper](https://github.com/pilgr/Paper)
+- [hawk](https://github.com/orhanobut/hawk)
+- [nitrite aka NO2](https://github.com/nitrite/nitrite-java)
+- [room](https://developer.android.com/topic/libraries/architecture/room)
+- [velvetdb](https://github.com/zakgof/velvetdb)
 
 
 ### Test operations:
 
-- insert 1000 person records with random data
-- get 1000 random persons using lastName as the key
+- **Write**: insert 1000 person records with random data
+- **Read**: get 1000 random persons using lastName as the key
 
 
 ### Interactive mode:
